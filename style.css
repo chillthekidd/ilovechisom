@@ -1,0 +1,262 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body and Background */
+body {
+    background: #f9e4e7;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+h1, h2 {
+    color: #e51c44;
+}
+
+/* Welcome Page */
+#welcome-page {
+    margin-top: 50px;
+}
+
+#flower-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.carnation {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle at 50%, #e51c44, #ff79a8);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    position: relative;
+    animation: bloom 2s ease-out infinite;
+    cursor: pointer;
+}
+
+.carnation:before, .carnation:after {
+    content: '';
+    position: absolute;
+    background-color: #ff79a8;
+    border-radius: 50%;
+    animation: bloom 2s ease-out infinite;
+}
+
+.carnation:before {
+    width: 25px;
+    height: 25px;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.carnation:after {
+    width: 25px;
+    height: 25px;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Love Message Section with Chisom's Image */
+#love-message {
+    margin-top: 50px;
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: left;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+#message-text {
+    font-style: italic;
+    font-weight: 300;
+    color: #444;
+    white-space: pre-wrap;
+    line-height: 1.6;
+}
+
+/* Styling for the container with the image and message */
+.message-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-direction: column;
+}
+
+.chison-image {
+    width: 150px; /* Smaller image size */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Photo Gallery Section */
+#photo-gallery {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+#gallery-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+#gallery-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#gallery-container img:hover {
+    transform: scale(1.1);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Interactive Section */
+#interactive-section {
+    margin-top: 60px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.interactive-box {
+    width: 200px;
+    height: 150px;
+    background-color: #ff79a8;
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.interactive-box:hover {
+    transform: scale(1.1);
+}
+
+#countdown {
+    margin-top: 60px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Animations */
+@keyframes bloom {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Footer */
+footer {
+    margin-top: 80px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* Media Queries for Mobile Optimization */
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .message-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .chison-image {
+        width: 120px; /* Adjusted size for mobile */
+    }
+
+    #interactive-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .interactive-box {
+        width: 80%;
+    }
+
+    #countdown {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .message-container {
+        padding: 10px;
+    }
+
+    .chison-image {
+        width: 100px; /* Further adjusted for smaller screens */
+    }
+
+    #interactive-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .interactive-box {
+        width: 100%;
+    }
+
+    #countdown {
+        font-size: 18px;
+    }
+}
